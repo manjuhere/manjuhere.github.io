@@ -11,7 +11,9 @@ layout: default
             <option value="INC">INC</option>
             <option value="JD(S)">JD(S)</option>
         </select>
-        <h2>Results for</h2><label id="partyName"><h2>Party</h2></label><br><br><h2 id="total_votes"> TOTAL VOTES - </h2><br><table id="ResultsTable">
+        <h2>Results for</h2><label id="partyName"><h2>Party</h2></label><br><br>
+        <h2 id="totalvotes"> TOTAL VOTES - </h2><br>
+        <table id="ResultsTable">
     <caption>Results-Table</caption>
     <thead>
         <tr>
@@ -55,7 +57,7 @@ layout: default
             <td align="left">Shimoga</td>
             <td align="left">UPJP</td>
             <td align="left" style="font-weight:bold">VENKATESH.R</td>
-            <td align="right">4016</td>
+            <td align="right">4044</td>
             <td align="right">0.32</td>
         </tr>
         <tr>
@@ -125,8 +127,8 @@ layout: default
             <td align="left">Shimoga</td>
             <td align="left">JD(S)</td>
             <td align="left" style="font-weight:bold">S.MADHUBANGARAPPA</td>
-            <td align="right">497332</td>
-            <td align="right">39.48</td>
+            <td align="right">501337</td>
+            <td align="right">39.49</td>
         </tr>
         <tr>
             <td align="left">Kolar (SC)</td>
@@ -503,8 +505,8 @@ layout: default
             <td align="left">Shimoga</td>
             <td align="left">BJP</td>
             <td align="left" style="font-weight:bold">B.Y.RAGHAVENDRA.</td>
-            <td align="right">716044</td>
-            <td align="right">56.84</td>
+            <td align="right">721450</td>
+            <td align="right">56.83</td>
         </tr>
         <tr>
             <td align="left">Chikkballapur</td>
@@ -599,7 +601,7 @@ layout: default
         </tr>
     </tbody>
 </table>
-<hr>### Last Updated - 14:39 | 23-05-2019 
+<hr>### Last Updated - 14:41 | 23-05-2019 
 
 
 </body>
@@ -624,7 +626,7 @@ layout: default
                         tr[i].style.display = "none";
                     }
                 }
-                document.getElementById("total_votes").innerHtml = "TOTAL VOTES - " + totalVotes.toString();
+                document.getElementById("totalvotes").innerHtml = "TOTAL VOTES - " + totalVotes.toString();
             }
             filterForParty(document.getElementById("party").value)
         </script>

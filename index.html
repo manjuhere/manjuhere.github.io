@@ -2,7 +2,7 @@
 layout: default
 ---
 <body><h1> 2019 Loksabha Election Result for karnataka </h1><br><hr>
-        <h2> TOTAL VOTES - 26,007,307 </h2><br>
+        <h2> TOTAL VOTES - 26,070,492 </h2><br>
         <h3> (Collected from 28/28 Constituencies) </h2><br><br>
         <hr>
         <label for="party"> Select Party</label>
@@ -12,8 +12,8 @@ layout: default
             <option value="INC">INC</option>
             <option value="JD(S)">JD(S)</option>
         </select>
-        <h2>Results for</h2><label id="partyName"><h2>Party</h2></label><br><br><table id="results_table">
-    <caption>results_table</caption>
+        <h2>Results for</h2><label id="partyName"><h2>Party</h2></label><br><br><table id="ResultsTable">
+    <caption>Results-Table</caption>
     <thead>
         <tr>
             <th>Constituency</th>
@@ -105,7 +105,7 @@ layout: default
             <td align="left">Udupi Chikmagalur</td>
             <td align="left">UPJP</td>
             <td align="left" style="font-weight:bold">SURESH KUNDER</td>
-            <td align="right">1624</td>
+            <td align="right">1756</td>
             <td align="right">0.31</td>
         </tr>
         <tr>
@@ -119,8 +119,8 @@ layout: default
             <td align="left">Udupi Chikmagalur</td>
             <td align="left">BJP</td>
             <td align="left" style="font-weight:bold">SHOBHA KARANDLAJE</td>
-            <td align="right">320430</td>
-            <td align="right">62.11</td>
+            <td align="right">350885</td>
+            <td align="right">62.24</td>
         </tr>
         <tr>
             <td align="left">Shimoga</td>
@@ -189,8 +189,8 @@ layout: default
             <td align="left">Udupi Chikmagalur</td>
             <td align="left">JD(S)</td>
             <td align="left" style="font-weight:bold">PRAMOD MADHWARAJ</td>
-            <td align="right">166805</td>
-            <td align="right">32.33</td>
+            <td align="right">182043</td>
+            <td align="right">32.29</td>
         </tr>
         <tr>
             <td align="left">Chikkodi</td>
@@ -224,8 +224,8 @@ layout: default
             <td align="left">Mandya</td>
             <td align="left">JD(S)</td>
             <td align="left" style="font-weight:bold">NIKHIL KUMARASWAMY</td>
-            <td align="right">285014</td>
-            <td align="right">44.86</td>
+            <td align="right">302240</td>
+            <td align="right">44.36</td>
         </tr>
         <tr>
             <td align="left">Dakshina Kannada</td>
@@ -441,7 +441,7 @@ layout: default
             <td align="left">Mandya</td>
             <td align="left">UPJP</td>
             <td align="left" style="font-weight:bold">DIVAKAR.C.P.GOWDA</td>
-            <td align="right">1454</td>
+            <td align="right">1588</td>
             <td align="right">0.23</td>
         </tr>
         <tr>
@@ -600,7 +600,7 @@ layout: default
         </tr>
     </tbody>
 </table>
-<hr>### Last Updated - 14:15 | 23-05-2019 
+<hr>### Last Updated - 14:18 | 23-05-2019 
 
 
 </body>
@@ -608,7 +608,7 @@ layout: default
             function filterForParty(party) {
                 document.getElementById("partyName").innerText = party;
                 var found;
-                table = document.getElementById("results_table");
+                table = document.getElementById("Results-Table");
                 let tr = table.getElementsByTagName("tr");
                 for (let i = 0; i < tr.length; i++) {
                     let td = tr[i].getElementsByTagName("td");

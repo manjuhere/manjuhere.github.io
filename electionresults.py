@@ -12,7 +12,7 @@ from datetime import datetime
 import pytz
 tz = pytz.timezone('Asia/Kolkata')
 
-repo_dir = "/home/ashwin/Desktop/UPP-Election-Result-2019"
+repo_dir = "/Users/manjunath/Developer/Web Dev/githubpages"
 file_name = os.path.join(repo_dir, 'index.md')
 
 # print(writer.dumps())

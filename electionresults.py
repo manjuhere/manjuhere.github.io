@@ -1,9 +1,8 @@
 import requests
-import urllib.request
 import time
 from bs4 import BeautifulSoup
 import csv
-from pytablewriter import MarkdownTableWriter
+from pytablewriter import HtmlTableWriter
 from pytablewriter.style import Style
 import git, os
 import time
@@ -13,7 +12,7 @@ import pytz
 tz = pytz.timezone('Asia/Kolkata')
 
 repo_dir = "/Users/manjunath/Developer/Web Dev/githubpages"
-file_name = os.path.join(repo_dir, 'index.md')
+file_name = os.path.join(repo_dir, 'index.html')
 
 # print(writer.dumps())
 def readStateInfo(filepath):
@@ -32,7 +31,7 @@ def getResultConstituency(constituency, party, state="S10", candidate=None):
     # NEW - https://results.eci.gov.in/ConstituencywiseS1610.htm?ac=10
     # https://results.eci.gov.in/pc/en/constituencywise/Constituencywise{0}{1}.htm?ac={1}
     # resultUrl = "https://results.eci.gov.in/Constituencywise{0}{1}.htm?ac={1}"
-    resultUrl = "https://results.eci.gov.in/pc/en/constituencywise/Constituencywise{1}{0}.htm?ac={1}"
+    resultUrl = "https://results.eci.gov.in/pc/en/constituencywise/Constituencywise{0}{1}.htm?ac={1}"
     # print(resultUrl.format(state, constituency))
     response = requests.get(resultUrl.format(state, constituency))
 
@@ -46,7 +45,6 @@ def getResultConstituency(constituency, party, state="S10", candidate=None):
     _resultDict = None
 
     for tr in votes_table_tr:
-        print(tr)
         if tr != "":
             try:
                 _votes = None
@@ -82,6 +80,7 @@ while True:
     _totalConstituencyCollected = 0
     _resultList = []
 
+    htmlTable = "<table><tr><td>Constituency</td><td>Candidate</td><td>Votes</td></tr>"
     for _constituency in _constituencies:
         _result = getResultConstituency(constituency=_constituency["constituencyNumber"], party=PARTY)
         if _result:
@@ -90,12 +89,11 @@ while True:
             _resultList.append([_constituency["constituencyName"], _result["candidate"], _result["votes"]])
             print("Constituency: {0} \t\t\t Candidate: {1} \t\t\t Votes: {2} \n".format(_constituency["constituencyName"], _result["candidate"], _result["votes"]))
             
-
+    htmlTable = "</table>"
     print("\n\n TOTAL VOTES - {0:,} \n Collected from {1}/{2} Constituencies".format(_totalVotes, _totalConstituencyCollected, len(_constituencies)))
 
     _resultList.sort(key = lambda x: x[2], reverse=True) 
-
-    writer = MarkdownTableWriter()
+    writer = HtmlTableWriter()
     writer.headers = ["Constituency", "Candidate", "Votes"]
     writer.value_matrix = _resultList
 
@@ -109,19 +107,23 @@ while True:
 
     try:
         india_now = datetime.now(tz)
-        file = open("index.md","w") 
-        
-        file.write("# Election Result UPP 2019\n") 
-        file.write("\n---\n")         
-        file.write("# TOTAL VOTES - {0:,} \n## (Collected from {1}/{2} Constituencies) \n\n".format(_totalVotes, _totalConstituencyCollected, len(_constituencies))) 
-        file.write("\n---\n")         
-        file.write("# Results by Constituency \n\n")                 
+        file = open("index.html","w") 
+        file.write("---\nlayout: default\n---\n")
+        file.write("<body>")
+        file.write("<h1> Election Result UPP 2019</h1><br>") 
+        file.write("<hr>")
+        file.write("""
+        <h2> TOTAL VOTES - {0:,} </h2><br>
+        <h3> (Collected from {1}/{2} Constituencies) </h2><br><br>
+        """.format(_totalVotes, _totalConstituencyCollected, len(_constituencies))) 
+        file.write("<hr>")
+        file.write("<h2>Results by Constituency </h2><br><br>")
         file.write("### Last Updated - {0} \n\n\n".format(india_now.strftime("%H:%M | %d-%m-%Y"))) 
 
         file.write(writer.dumps()) 
 
-        file.write("\n\n")         
-
+        file.write("<hr>")
+        file.write("</body>")
         # file.write("""
         # <!-- Global site tag (gtag.js) - Google Analytics -->
         # <script async src='https://www.googletagmanager.com/gtag/js?id=UA-138371535-2'></script>

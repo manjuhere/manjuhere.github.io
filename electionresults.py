@@ -32,7 +32,7 @@ def getResultConstituency(constituency, party, state="S10", candidate=None):
     # NEW - https://results.eci.gov.in/ConstituencywiseS1610.htm?ac=10
     # https://results.eci.gov.in/pc/en/constituencywise/Constituencywise{0}{1}.htm?ac={1}
     # resultUrl = "https://results.eci.gov.in/Constituencywise{0}{1}.htm?ac={1}"
-    resultUrl = "https://results.eci.gov.in/pc/en/constituencywise/Constituencywise{0}{1}.htm?ac={1}"
+    resultUrl = "https://results.eci.gov.in/pc/en/constituencywise/Constituencywise{1}{0}.htm?ac={1}"
     # print(resultUrl.format(state, constituency))
     response = requests.get(resultUrl.format(state, constituency))
 

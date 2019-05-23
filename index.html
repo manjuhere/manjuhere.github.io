@@ -1,18 +1,18 @@
 ---
 layout: default
 ---
-<body><h1> 2019 Loksabha Election Result for karnataka </h1><br><hr>
-        <h3> (Collected from 28/28 Constituencies) </h2><br><br>
-        <hr>
-        <label for="party"> Select Party</label>
+<body><h1> 2019 Loksabha Election Result for karnataka </h1><br><hr><hr>
+        <label for="party"> Filter by Party</label>
         <select id="party" onChange="filterForParty(this.value);">
             <option value="UPJP">UPJP</option>
             <option value="BJP">BJP</option>
             <option value="INC">INC</option>
             <option value="JD(S)">JD(S)</option>
         </select>
-        <h2>Results for</h2><label id="partyName">Party</label><br><br>
+        
         <h2> TOTAL VOTES - </h2> <label id="totalvotes"></label><br>
+        
+        <label> (Collected from </label> <label id="conscount"></label><label>/28 Constituencies)</label><br><br>
         <table id="ResultsTable">
     <caption>Results-Table</caption>
     <thead>
@@ -601,15 +601,15 @@ layout: default
         </tr>
     </tbody>
 </table>
-<hr>### Last Updated - 15:17 | 23-05-2019 
+<hr>### Last Updated - 15:25 | 23-05-2019 
 
 
 </body>
         <script>
             function filterForParty(party) {
-                document.getElementById("partyName").innerText = party;
                 var found;
                 var totalVotes = 0
+                var consCount = 0
                 table = document.getElementById("ResultsTable");
                 let tr = table.getElementsByTagName("tr");
                 for (let i = 0; i < tr.length; i++) {
@@ -621,12 +621,14 @@ layout: default
                     if (found) {
                         tr[i].style.display = "";
                         totalVotes += parseInt(td[3].innerText);
+                        consCount += 1
                         found = false;
                     } else {
                         tr[i].style.display = "none";
                     }
                 }
                 document.getElementById("totalvotes").innerText = totalVotes.toString();
+                document.getElementById("conscount").innerText = consCount.toString();
             }
             filterForParty(document.getElementById("party").value)
         </script>

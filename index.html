@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<body><h1> 2019 Loksabha Election Result for karnataka </h1><br><hr><hr>
+<body><h1> 2019 Loksabha Election karnataka Results </h1><br><hr>
         <label for="party"> Filter by Party</label>
         <select id="party" onChange="filterForParty(this.value);">
             <option value="UPJP">UPJP</option>
@@ -10,10 +10,10 @@ layout: default
             <option value="JD(S)">JD(S)</option>
         </select>
         
-        <h2> TOTAL VOTES - </h2> <label id="totalvotes"></label><br>
+        <label> TOTAL VOTES - </label> <label id="totalvotes"></label><br>
         
         <label> (Collected from </label> <label id="conscount"></label><label>/28 Constituencies)</label><br><br>
-        <table id="ResultsTable">
+        <hr><table id="ResultsTable">
     <caption>Results-Table</caption>
     <thead>
         <tr>
@@ -25,13 +25,6 @@ layout: default
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td align="left">Bellary (ST)</td>
-            <td align="left">BJP</td>
-            <td align="left" style="font-weight:bold">Y. DEVENDRAPPA</td>
-            <td align="right">614274</td>
-            <td align="right">50.39</td>
-        </tr>
         <tr>
             <td align="left">Dharwad</td>
             <td align="left">INC</td>
@@ -59,20 +52,6 @@ layout: default
             <td align="left" style="font-weight:bold">VENKATESH.R</td>
             <td align="right">4084</td>
             <td align="right">0.32</td>
-        </tr>
-        <tr>
-            <td align="left">Chamrajanagar (SC)</td>
-            <td align="left">BJP</td>
-            <td align="left" style="font-weight:bold">V. SRINIVAS PRASAD</td>
-            <td align="right">523430</td>
-            <td align="right">44.50</td>
-        </tr>
-        <tr>
-            <td align="left">Bellary (ST)</td>
-            <td align="left">INC</td>
-            <td align="left" style="font-weight:bold">V. S. UGRAPPA</td>
-            <td align="right">559970</td>
-            <td align="right">45.93</td>
         </tr>
         <tr>
             <td align="left">Haveri</td>
@@ -110,13 +89,6 @@ layout: default
             <td align="right">0.30</td>
         </tr>
         <tr>
-            <td align="left">Uttara Kannada</td>
-            <td align="left">UPJP</td>
-            <td align="left" style="font-weight:bold">SUNIL PAWAR</td>
-            <td align="right">3721</td>
-            <td align="right">0.32</td>
-        </tr>
-        <tr>
             <td align="left">Udupi Chikmagalur</td>
             <td align="left">BJP</td>
             <td align="left" style="font-weight:bold">SHOBHA KARANDLAJE</td>
@@ -131,13 +103,6 @@ layout: default
             <td align="right">39.48</td>
         </tr>
         <tr>
-            <td align="left">Kolar (SC)</td>
-            <td align="left">BJP</td>
-            <td align="left" style="font-weight:bold">S. MUNISWAMY</td>
-            <td align="right">701351</td>
-            <td align="right">56.23</td>
-        </tr>
-        <tr>
             <td align="left">Bangalore Central</td>
             <td align="left">INC</td>
             <td align="left" style="font-weight:bold">Rizwan Arshad</td>
@@ -145,25 +110,11 @@ layout: default
             <td align="right">44.47</td>
         </tr>
         <tr>
-            <td align="left">Kolar (SC)</td>
-            <td align="left">UPJP</td>
-            <td align="left" style="font-weight:bold">RAMANJI. R</td>
-            <td align="right">3386</td>
-            <td align="right">0.27</td>
-        </tr>
-        <tr>
             <td align="left">Raichur (ST)</td>
             <td align="left">BJP</td>
             <td align="left" style="font-weight:bold">RAJA AMARESHWARA NAIK</td>
             <td align="right">397084</td>
             <td align="right">53.55</td>
-        </tr>
-        <tr>
-            <td align="left">Chamrajanagar (SC)</td>
-            <td align="left">INC</td>
-            <td align="left" style="font-weight:bold">R. DHRUVANARAYANA</td>
-            <td align="right">528172</td>
-            <td align="right">44.90</td>
         </tr>
         <tr>
             <td align="left">Dharwad</td>
@@ -220,13 +171,6 @@ layout: default
             <td align="left" style="font-weight:bold">NIRANJAN NAYAK</td>
             <td align="right">5106</td>
             <td align="right">0.69</td>
-        </tr>
-        <tr>
-            <td align="left">Mandya</td>
-            <td align="left">JD(S)</td>
-            <td align="left" style="font-weight:bold">NIKHIL KUMARASWAMY</td>
-            <td align="right">379413</td>
-            <td align="right">43.70</td>
         </tr>
         <tr>
             <td align="left">Dakshina Kannada</td>
@@ -313,27 +257,6 @@ layout: default
             <td align="right">43.41</td>
         </tr>
         <tr>
-            <td align="left">Koppald</td>
-            <td align="left">BJP</td>
-            <td align="left" style="font-weight:bold">KARADI SANGANNA AMARAPPA</td>
-            <td align="right">584997</td>
-            <td align="right">49.25</td>
-        </tr>
-        <tr>
-            <td align="left">Koppald</td>
-            <td align="left">INC</td>
-            <td align="left" style="font-weight:bold">K.RAJASHEKAR BASAVARAJ HITNAL</td>
-            <td align="right">547573</td>
-            <td align="right">46.10</td>
-        </tr>
-        <tr>
-            <td align="left">Kolar (SC)</td>
-            <td align="left">INC</td>
-            <td align="left" style="font-weight:bold">K.H. MUNIYAPPA</td>
-            <td align="right">496095</td>
-            <td align="right">39.77</td>
-        </tr>
-        <tr>
             <td align="left">Bijapur (SC)</td>
             <td align="left">BJP</td>
             <td align="left" style="font-weight:bold">JIGAJINAGI RAMESH CHANDAPPA</td>
@@ -346,20 +269,6 @@ layout: default
             <td align="left" style="font-weight:bold">ISHWAR PATIL</td>
             <td align="right">7024</td>
             <td align="right">0.55</td>
-        </tr>
-        <tr>
-            <td align="left">Chamrajanagar (SC)</td>
-            <td align="left">UPJP</td>
-            <td align="left" style="font-weight:bold">HANUR NAGARAJU</td>
-            <td align="right">8765</td>
-            <td align="right">0.75</td>
-        </tr>
-        <tr>
-            <td align="left">Tumkur</td>
-            <td align="left">JD(S)</td>
-            <td align="left" style="font-weight:bold">H. D. DEVEGOWDA</td>
-            <td align="right">547083</td>
-            <td align="right">46.42</td>
         </tr>
         <tr>
             <td align="left">Hassan</td>
@@ -397,13 +306,6 @@ layout: default
             <td align="right">0.27</td>
         </tr>
         <tr>
-            <td align="left">Tumkur</td>
-            <td align="left">BJP</td>
-            <td align="left" style="font-weight:bold">G. S. BASAVARAJ</td>
-            <td align="right">568824</td>
-            <td align="right">48.27</td>
-        </tr>
-        <tr>
             <td align="left">Davanagere</td>
             <td align="left">BJP</td>
             <td align="left" style="font-weight:bold">G M SIDDESHWAR</td>
@@ -439,13 +341,6 @@ layout: default
             <td align="right">34.03</td>
         </tr>
         <tr>
-            <td align="left">Mandya</td>
-            <td align="left">UPJP</td>
-            <td align="left" style="font-weight:bold">DIVAKAR.C.P.GOWDA</td>
-            <td align="right">2051</td>
-            <td align="right">0.24</td>
-        </tr>
-        <tr>
             <td align="left">Chitradurga (SC)</td>
             <td align="left">UPJP</td>
             <td align="left" style="font-weight:bold">DEVENDRAPPA</td>
@@ -474,13 +369,6 @@ layout: default
             <td align="right">54.25</td>
         </tr>
         <tr>
-            <td align="left">Tumkur</td>
-            <td align="left">UPJP</td>
-            <td align="left" style="font-weight:bold">CHAYA RAJASHANKAR</td>
-            <td align="right">4201</td>
-            <td align="right">0.36</td>
-        </tr>
-        <tr>
             <td align="left">Mysore</td>
             <td align="left">INC</td>
             <td align="left" style="font-weight:bold">C.H.VIJAYASHANKAR</td>
@@ -493,13 +381,6 @@ layout: default
             <td align="left" style="font-weight:bold">BHAGWANTH KHUBA</td>
             <td align="right">581817</td>
             <td align="right">52.36</td>
-        </tr>
-        <tr>
-            <td align="left">Koppald</td>
-            <td align="left">UPJP</td>
-            <td align="left" style="font-weight:bold">BANDIMATH SHARANAYYA</td>
-            <td align="right">2244</td>
-            <td align="right">0.19</td>
         </tr>
         <tr>
             <td align="left">Shimoga</td>
@@ -565,20 +446,6 @@ layout: default
             <td align="right">63.43</td>
         </tr>
         <tr>
-            <td align="left">Uttara Kannada</td>
-            <td align="left">BJP</td>
-            <td align="left" style="font-weight:bold">ANANTKUMAR HEGDE</td>
-            <td align="right">783211</td>
-            <td align="right">68.09</td>
-        </tr>
-        <tr>
-            <td align="left">Uttara Kannada</td>
-            <td align="left">JD(S)</td>
-            <td align="left" style="font-weight:bold">ANAND ASNOTIKAR</td>
-            <td align="right">306130</td>
-            <td align="right">26.61</td>
-        </tr>
-        <tr>
             <td align="left">Bidar</td>
             <td align="left">UPJP</td>
             <td align="left" style="font-weight:bold">AMBRESH KENCHA</td>
@@ -601,7 +468,7 @@ layout: default
         </tr>
     </tbody>
 </table>
-<hr>### Last Updated - 15:25 | 23-05-2019 
+<hr>### Last Updated - 15:27 | 23-05-2019 
 
 
 </body>
